@@ -65,7 +65,6 @@ cmd_make = ShellCommand(
     haltOnFailure=True
     )
 
-#upload_directory = Interpolate("/usr/local/src/www/htdocs/buildbot/unstable/"+ date.today().strftime("%Y-%m-%d") +"/%(prop:branch)s/")
 upload_directory = Interpolate("/usr/local/src/www/htdocs/buildbot/unstable/%(prop:falterVersion:-1.1.0)s/")
 upload_dir_target = Interpolate("/usr/local/src/www/htdocs/buildbot/unstable/%(prop:falterVersion:-1.1.0)s/*/%(prop:buildername)s/")
 
