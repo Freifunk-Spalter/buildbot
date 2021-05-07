@@ -54,7 +54,12 @@ def cmd_make_command(props):
     command = ['nice', './build_falter']
     command.extend(["-p", "all"])
     command.extend(["-v", props.getProperty('falterVersion', default=defaultFalterVersion)])
-    command.extend(["-t", props.getProperty('buildername')])
+    # slice build parameter from builder name
+    tmp_target = str(props.getProperty('buildername'))
+    target = tmp_target.split('/')[0]
+    subtarget = tmp_target.split('/')[1]
+    command.extend(["-t", target])
+    command.extend(["-s", subtarget])
     return command
 
 
