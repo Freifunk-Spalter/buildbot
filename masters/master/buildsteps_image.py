@@ -55,7 +55,7 @@ def cmd_make_command(props):
     command.extend(["-p", "all"])
     command.extend(["-v", props.getProperty('falterVersion', default=defaultFalterVersion)])
     # slice build parameter from builder name
-    tmp_target = str(props.getProperty('buildername'))
+    tmp_target = props.getProperty('buildername')
     target = tmp_target.split('/')[0]
     subtarget = tmp_target.split('/')[1]
     command.extend(["-t", target])
